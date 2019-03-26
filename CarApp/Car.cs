@@ -6,23 +6,23 @@ namespace CarApp
 {
     public class Car
     {
-        public Car(float CurrentGasLevel)
+        public Car()
         {
-            this.CurrentGasLevel = CurrentGasLevel;
+            this.currentGasLevel = new Random().Next(1, 13);
         }
 
         public static float gasMaxValue = 13;
 
-        public float CurrentGasLevel { get; set; }
+        public float currentGasLevel { get; set; }
 
         public float AddGas(float value)
         {
-            return CurrentGasLevel + value;
+            return currentGasLevel + value;
         }
 
         public float FillToMax()
         {
-            float gasTobeAdded = gasMaxValue - CurrentGasLevel;
+            float gasTobeAdded = gasMaxValue - currentGasLevel;
             AddGas(gasTobeAdded);
 
             return gasTobeAdded;
